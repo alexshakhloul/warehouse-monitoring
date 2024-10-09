@@ -1,0 +1,20 @@
+server:
+  port: 8085
+
+spring:
+  kafka:
+    consumer:
+      group-id: "group-id"
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    bootstrap-servers: localhost:29092
+
+service:
+  udpPortMap:
+    TEMPERATURE: 3344
+    HUMIDITY: 3355
+  consuming-topics:
+    sensors-data: "sensors-data-topic"
+  producer-topics:
+    sensors-data: "sensors-data-topic"
